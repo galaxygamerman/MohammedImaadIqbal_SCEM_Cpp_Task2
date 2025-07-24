@@ -2,10 +2,20 @@
 //
 
 #include <iostream>
+#include <Poco/DateTime.h>
+#include <Poco/DateTimeFormatter.h>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // Create a Poco DateTime object for the current time
+    Poco::DateTime now;
+
+    // Format the current date and time as a string
+    std::string formatted = Poco::DateTimeFormatter::format(now, "%Y-%m-%d %H:%M:%S");
+
+    std::cout << "Current date and time (using Poco): " << formatted << std::endl;
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
